@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>One Question For You 💗</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #ffe0eb, #fff0f5);
+  font-family: cursive;
+  text-align: center;
+  color: #a34468;
+  overflow: hidden;
+}
+
+.box {
+  background: white;
+  width: 90%;
+  max-width: 400px;
+  padding: 35px 20px;
+  border-radius: 30px;
+  box-shadow: 0 10px 35px #eeb2c7;
+}
+
+h1 {
+  font-size: 28px;
+}
+
+p {
+  font-size: 17px;
+}
+
+button {
+  border: none;
+  padding: 13px 30px;
+  margin: 12px;
+  border-radius: 30px;
+  font-family: cursive;
+  font-size: 17px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#yes {
+  background: #ff83ae;
+  color: white;
+}
+
+#no {
+  background: #ffe0eb;
+  color: #a34468;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+#result {
+  display: none;
+  margin-top: 20px;
+}
+
+#result img {
+  width: 220px;
+  border-radius: 20px;
+}
+
+.heart {
+  position: fixed;
+  bottom: -30px;
+  animation: float 5s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes float {
+  to {
+    transform: translateY(-110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+
+  <div id="question">
+    <h1>Hiee myyy cutupiee honeyypiee! 🎀</h1>
+    <p> I have one little question for you...</p>
+
+    <h1>WILL YOUU MARRY ME? 🥺💗</h1>
+
+    <button id="yes" onclick="yesClicked()">
+      YES 💗
+    </button>
+
+    <button id="no" onclick="noClicked()">
+      NOO 🙄
+    </button>
+
+    <p id="message"></p>
+  </div>
+
+  <div id="result">
+    <h1>HURAYYYYYYYYYYYYY!! 😭💗</h1>
+
+    <div style="font-size:100px;">👩🏻‍❤️‍👨🏻</div>
+
+    <p>
+      My Everything,
+      my whole world,
+      and my cute lil bby. 💗
+    </p>
+
+    <h2>I LOVE YOUUU SOOO MUCHH! 🧸</h2>
+  </div>
+
+</div>
+
+<script>
+
+function yesClicked() {
+  document.getElementById("question").style.display = "none";
+  document.getElementById("result").style.display = "block";
+}
+
+function noClicked() {
+  document.getElementById("message").innerHTML =
+  "Hatttt bhonduuuu!! 😤💗";
+}
+
+function createHeart() {
+  const heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = "💗";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = "20px";
+  document.body.appendChild(heart);
+
+  setTimeout(() => heart.remove(), 5000);
+}
+
+setInterval(createHeart, 400);
+
+</script>
+
+</body>
+</html>
